@@ -16,6 +16,9 @@ class MainActivity : AppCompatActivity() {
     private fun loadImg() {
         val uri = Uri.parse("https://www.gstatic.com/webp/gallery/1.sm.jpg")
         val simpleDraweeView = findViewById<SimpleDraweeView>(R.id.sdv_image_view)
+        val layoutParame = simpleDraweeView.layoutParams
+//        layoutParame.width = DensityUtil.px2dp(this, 320f).toInt()
+//        layoutParame.height = DensityUtil.px2dp(this, 210f).toInt()
         simpleDraweeView.setImageURI(uri)
     }
 }
