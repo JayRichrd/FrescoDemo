@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:fresco="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="fresco.cain.tencent.com.frescodemo.User" />
+
+        <variable
+            name="user"
+            type="User" />
+    </data>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -12,13 +22,15 @@
             android:id="@+id/tv_demo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp" />
+            android:layout_marginBottom="20dp"
+            android:text="@{user.name}" />
 
         <com.facebook.drawee.view.SimpleDraweeView
             android:id="@+id/sdv_image_view"
             android:layout_width="320dp"
             android:layout_height="214dp"
             android:background="@android:color/holo_green_light"
+            app:imageUrl="@{user.imgUrl}"
             fresco:placeholderImage="@drawable/ic_launcher"
             fresco:placeholderImageScaleType="centerCrop" />
     </LinearLayout>
